@@ -12,11 +12,11 @@ class ErrorPage extends Controller
 	/**
 	 * Error constructor.
 	 */
-	public function __construct()
+	public function __construct($msg)
 	{
 		parent::__construct();
 		//echo "Error";
-		$this->view->msg ="nem létezik";
+		$this->view->msg =$msg;
 
 	}
 
