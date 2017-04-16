@@ -8,15 +8,28 @@
  */
 class Auth
 {
+    private static $UserPrim ="UserPrim";
+    static $UserLogged = "UserLogged";
+
     /**
      * @return bool
      */
     public static function checkedLogged()
     {
-        if (Session::get("loggedIn") == true) {
+        if (Session::issetVal(self::$UserLogged) && Session::get(self::$UserLogged) == true) {
             return true;
         } else {
             return false;
         }
+    }
+
+    public static function userIsAdmin()
+    {
+        return Session::issetVal(self::$UserPrim) && Session::get(self::$UserPrim) == "admin";
+    }
+
+    public static function userIsModerator()
+    {
+        return Session::issetVal(self::$UserPrim) && Session::get(self::$UserPrim) == "moderator";
     }
 }

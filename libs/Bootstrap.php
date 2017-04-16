@@ -25,6 +25,7 @@ class Bootstrap
      */
     public function __construct()
     {
+
         Session::init();
         $this->_getUrl();
 
@@ -111,7 +112,7 @@ class Bootstrap
                 }
             }
             else {
-                $this->_error();
+                $this->_error("Nem látezik ilyen metódus");
                 return false;
             }
 
@@ -131,10 +132,11 @@ class Bootstrap
      *  This is Error page
      *  Calling when something error in the Bootstrap
      */
-    private function _error()
+    private function _error($msg=null)
     {
         require ROOT . CONTROLLERS . "errorpage.php";
-        $controller = new ErrorPage();
+        $controller = new ErrorPage($msg);
+
         $controller->index();
         exit();
     }

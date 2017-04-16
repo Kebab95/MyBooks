@@ -55,6 +55,7 @@ class View
         if ($noInclude) {
             require ROOT . VIEWS . $name . ".php";
         } else {
+            //echo ROOT . VIEWS . HEADER_FILE;
             require ROOT . VIEWS . HEADER_FILE;
             require ROOT . VIEWS . $name . ".php";
             require ROOT . VIEWS . FOOTER_FILE;

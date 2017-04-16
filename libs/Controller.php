@@ -53,5 +53,13 @@ abstract class Controller
         }
     }
 
+    /**
+     * @return View
+     */
+    public function getView(): View
+    {
+        return $this->view;
+    }
+
 
 }
