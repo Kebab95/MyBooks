@@ -7,22 +7,22 @@
  */
 
 //Page title
-define("PAGE_TITLE", "Test");
+define("PAGE_TITLE", "MyBooks");
 define("HEADER_FILE", "header.php");
 define("FOOTER_FILE", "footer.php");
 
 //Hash Key
-define('HASH_KEY', 'Banan2000Alma');
+define('HASH_KEY', 'MyBooks2017');
 
 //Database
 define("DB_TYPE", "mysql");
 define("DB_HOST", "localhost");
-define("DB_NAME", "mymvc");
+define("DB_NAME", "mybooks");
 define("DB_USER", "root");
 define("DB_PASS", "");
 
 //Paths
-define("URL", "http://localhost/myMVC2/");
+define("URL", "http://localhost/MyBooks/");
 define("LIBS", "libs/");
 define("CONTROLLERS", "controllers/");
 define("VIEWS", "views/");

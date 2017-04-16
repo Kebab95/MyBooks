@@ -9,7 +9,7 @@
     <script src="<?php echo URL?>public/js/bootstrap.min.js"></script>
     <script src="<?php echo URL?>public/js/default.js"></script>
 
-    <link rel="stylesheet" type="text/css" href="<?php echo URL?>public/css/default.css"/>
+
     <link rel="stylesheet" type="text/css" href="<?php echo URL?>public/css/bootstrap.min.css"/>
     <?php
     if (isset($this->meta) && count($this->meta)>0){
@@ -29,22 +29,41 @@
             echo '<link rel="stylesheet" type="text/css" href="'.URL.'views/'.$css.'"/>';
         }
     }
+   // echo Hash::createMD5("admin123");
     ?>
 </head>
 <body>
-<nav class="navbar navbar-default">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="<?php echo URL?>index/">Document</a>
+<div class="container">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="<?php echo URL?>index/">My Books</a>
+            </div>
+
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <?php
+                        if (Auth::checkedLogged()){
+                            if (Auth::userIsAdmin() || Auth::userIsModerator()){
+                                ?>
+                                <li><a href="<?php echo URL?>users/">Felhasználók</a></li>
+                                <?php
+                            }
+                            ?>
+                            <li><a href="<?php echo URL?>groupview/">Tárolt műveim</a></li>
+                            <li><a href="<?php echo URL?>login/logout">Kijelentkezés</a></li>
+                            <?php
+                        }
+                        else {
+                            ?>
+                            <li><a href="<?php echo URL?>login/">Bejelentkezés</a></li>
+                            <?php
+                        }
+                    ?>
+                </ul>
+            </div>
         </div>
 
-        <div class="collapse navbar-collapse">
-            <ul class="nav navbar-nav">
-                <li><a href="<?php echo URL?>index/">Index</a></li>
-                <li><a href="<?php echo URL?>about/">About</a></li>
-            </ul>
-        </div>
-    </div>
-
-</nav>
+    </nav>
+</div>
 <div class="container">

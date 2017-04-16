@@ -9,7 +9,7 @@ require "config.php";
  */
 function __autoload($class)
 {
-    require LIBS . $class . ".php";
+    require ROOT.LIBS . $class . ".php";
 }
 
 $app = new Bootstrap();

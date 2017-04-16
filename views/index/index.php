@@ -6,9 +6,7 @@
                 <h3>Üdvözöllek</h3>
             </div>
             <div class="panel-body">
-                <p>Ez egy saját készítésű MVC alap.</p>
-                <p>A projekt állandó frissítés alatt van.</p>
-                <p>Githubon megtalálható itt: <a href="https://github.com/Kebab95/default_my_mvc">default_my_mvc</a></p>
+                <?php echo (Session::issetVal("UserID")?"Bejelentkezve":"Nincs bejelentkezve")?>
             </div>
         </div>
     </div>
